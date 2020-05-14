@@ -9,7 +9,7 @@
 	.landerbutton:hover { background-color: #FFF; color: #000; }
 	#lb1 { margin-right: 20%; }
 	#lb2 { margin-left: 20%; }
-	.subscribe { margin: 10px 20px; padding: 10px; font-size: 15px; width: 50%; border: none; border-radius: 3px; color: #000; }
+	.subscribe { margin: 10px 20px; padding: 10px; font-size: 15px; width: 50%; max-width: 600px; border: none; border-radius: 3px; color: #000; }
 	</style>
 	
 	<h1><?php echo get_option('lander_title_setting'); ?></h1>

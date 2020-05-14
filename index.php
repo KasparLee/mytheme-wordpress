@@ -306,7 +306,14 @@
 	.testim > p:nth-child(2) { padding: 20px 0px 0px 0px; }
 
 	/* STATS */
-	#stats { min-height: 50px; background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('<?php echo get_template_directory_uri(); ?>/images/stats-background.jpg') no-repeat fixed 75% center; }
+	#stats {
+		min-height: 50px;
+		background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('<?php echo get_template_directory_uri(); ?>/images/stats-background.jpg') no-repeat fixed 75% center;
+		background-size: 200%;
+	}
+	@media only screen and (max-device-width: 1000px) {
+		#stats { background-size: cover; }
+	}
 	.stat { margin: 30px 50px; color: #FFF; display: inline-block; }
 	.statf { font-size: 40px; font-weight: bold; }
 	.statl { font-size: 20px; font-weight: normal; }
