@@ -1,0 +1,31 @@
+/*
+Theme Name: MyTheme
+Author: Kaspar Lee
+Description: A semi-complete Wordpress landing page theme, created while learning to develop with PHP.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+This theme is licensed under GNU General Public License Version 2.
+*/
+
+html {
+	height:100%;
+	min-height:100%;
+}
+
+body {
+	text-align: center;
+	font-size: 11pt;
+	font-family: verdana;
+	font-weight: bold;
+	margin: 0px;
+	overflow-x: hidden;
+	min-height:100%;
+}
+
+#header { box-shadow: 0px 4px 5px -5px #000000; }
+
+#title { font-size: 20pt; padding: 10px 0px; margin: 0px;}
+
+.section { margin: 0px; padding: 3% 6%; position: relative; min-height: 350px; width: 100%; }
