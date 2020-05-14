@@ -2,56 +2,48 @@
 
 <html>
 
-<!-- Get header.php -->
-<?php get_header(); ?>
+<head>
+	<title><?php echo get_option('homepage_title_setting'); ?></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bootstrap.min.css">
+	<style type="text/css">
+
+		/* GENERAL */
+		h1, h2, h3, h4, h5, h6 { color: #2F2F2F; font-weight: bold; }
+		p { font-weight: normal; }
+
+		/* HEADER*/
+		#header { background-color: #FFF; }
+
+	</style>
+</head>
 
 <body>
 
 <div id="wrapper">
 	
-	<?php
-		wp_head(); // Get the Wordpress Header
-		get_template_part('navbar', 'navbar_template'); // Get navbar.php
-	?>
+	<!-- Gets the header and adds it to the page -->
+	<!-- temp disabled <php get_header(); ?> -->
 
 	<!-- Main Content -->
 	<div id="main">
 		<div id="content">
 
-			<div id="lander-cont">
-				<?php
-					// Import Lander Section
-					if (get_theme_mod('lander_shown_setting') == 1) { get_template_part('sections/lander', 'lander_section_template'); }
-				?>
-			</div>
+			<!-- Import Lander Section -->
+			<?php if (get_option('lander_shown_setting') == 1) { include 'sections/lander.php'; }; ?>
 
-			<div id="features-cont">
-				<?php
-					// Import Features Section
-					if (get_theme_mod('features_shown_setting') == 1) { get_template_part('sections/features', 'features_section_template'); }
-				?>
-			</div>
+			<!-- Import Features Section -->
+			<?php if (get_option('features_shown_setting') == 1) { include 'sections/features.php'; }; ?>
 
-			<div id="ourcomapny-cont">
-				<?php
-					// Import Our Company Section
-					if (get_theme_mod('ourcompany_shown_setting') == 1) { get_template_part('sections/ourcompany', 'ourcompany_section_template'); }
-				?>
-			</div>
+			<!-- Import Our Company Section -->
+			<?php if (get_option('ourcompany_shown_setting') == 1) { include 'sections/ourcompany.php'; }; ?>
 
-			<div id="aboutus-cont">
-				<?php
-					// Import About Us Section
-					if (get_theme_mod('aboutus_shown_setting') == 1) { get_template_part('sections/aboutus', 'aboutus_section_template'); }
-				?>
-			</div>
+			<!-- Import About Us Section -->
+			<?php if (get_option('aboutus_shown_setting') == 1) { include 'sections/aboutus.php'; }; ?>
 
-			<div id="packages-cont">
-				<?php
-					// Import Packages Section
-					if (get_theme_mod('packages_shown_setting') == 1) { get_template_part('sections/packages', 'packages_section_template'); }
-				?>
-			</div>	
+			<!-- Import Packages Section -->
+			<?php if (get_option('packages_shown_setting') == 1) { include 'sections/packages.php'; }; ?>			
 
 			<div id="testimonials" class="section">
 
@@ -59,6 +51,7 @@
 				<h3>What people have said about us</h3>
 
 				<div class="testims-container row">
+				
 					<div class="testim col-lg-4 col-md-4 col-sm-4 col-xs-10">
 						<div class="row">
 							<div class="testim-left col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -75,21 +68,42 @@
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 					</div>
+					
+					<div class="testim col-lg-4 col-md-4 col-sm-4 col-xs-10">
+						<div class="row">
+							<div class="testim-left col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<img class="anim" src="<?php echo get_template_directory_uri(); ?>/images/testim/testim2.jpg">
+							</div>
+							<div class="col-lg-1 col-md-1 col-sm-1 hidden-xs"></div>
+							<div class="testim-right col-lg-7 col-md-7 col-sm-7 col-xs-12">
+								<h4>Jane Smith</h4>
+								<p>CEO of bCompany</p>
+								<img src="<?php echo get_template_directory_uri(); ?>/images/testim/sig-johndoe.png">
+							</div>
+						</div>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					</div>
+					
+					<div class="testim col-lg-4 col-md-4 col-sm-4 col-xs-10">
+						<div class="row">
+							<div class="testim-left col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<img class="anim" src="<?php echo get_template_directory_uri(); ?>/images/testim/testim3.jpg">
+							</div>
+							<div class="col-lg-1 col-md-1 col-sm-1 hidden-xs"></div>
+							<div class="testim-right col-lg-7 col-md-7 col-sm-7 col-xs-12">
+								<h4>John Doe</h4>
+								<p>CEO of aCompany</p>
+								<img src="<?php echo get_template_directory_uri(); ?>/images/testim/sig-johndoe.png">
+							</div>
+						</div>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					</div>
+					
 				</div>
-
-<!-- 				<div class="testim">
-					<img class="anim" src="<?php echo get_template_directory_uri(); ?>/images/testim/testim2.jpg">
-					<h5>Jane Smith</h5>
-					<hr class="testimhr">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				</div>
-
-				<div class="testim">
-					<img class="anim" src="<?php echo get_template_directory_uri(); ?>/images/testim/testim3.jpg">
-					<h5>John Doe</h5>
-					<hr class="testimhr">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				</div> -->
 
 			</div>
 
@@ -197,41 +211,45 @@
 
 				<h2>Meet Our Team</h2>
 				<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+				
+				<div id="teammem-cont">
+				
+					<div class="teammem col-lg-4 col-md-4 col-sm-4 col-xs-10">
+						<img class="anim" src="<?php echo get_template_directory_uri(); ?>/images/teammem/teammem1.jpg">
+						<h5>John Doe</h5>
+						<p class="teammemjob">Director</p>
+						<hr class="teammemhr">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+						<img class="teammemwidget" src="<?php echo get_template_directory_uri(); ?>/images/sn/facebook.png">
+						<img class="teammemwidget" src="<?php echo get_template_directory_uri(); ?>/images/sn/twitter.png">
+						<img class="teammemwidget" src="<?php echo get_template_directory_uri(); ?>/images/sn/linkedin.png">
+						<img class="teammemwidget" src="<?php echo get_template_directory_uri(); ?>/images/sn/googleplus.png">
+					</div>
 
-				<div class="teammem">
-					<img class="anim" src="<?php echo get_template_directory_uri(); ?>/images/teammem/teammem1.jpg">
-					<h5>John Doe</h5>
-					<p class="teammemjob">Director</p>
-					<hr class="teammemhr">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-					<img class="teammemwidget" src="<?php echo get_template_directory_uri(); ?>/images/sn/facebook.png">
-					<img class="teammemwidget" src="<?php echo get_template_directory_uri(); ?>/images/sn/twitter.png">
-					<img class="teammemwidget" src="<?php echo get_template_directory_uri(); ?>/images/sn/linkedin.png">
-					<img class="teammemwidget" src="<?php echo get_template_directory_uri(); ?>/images/sn/googleplus.png">
-				</div>
+					<div class="teammem col-lg-4 col-md-4 col-sm-4 col-xs-10">
+						<img class="anim" src="<?php echo get_template_directory_uri(); ?>/images/teammem/teammem2.jpg">
+						<h5>Jane Smith</h5>
+						<p class="teammemjob">Co-Founder</p>
+						<hr class="teammemhr">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+						<img class="teammemwidget" src="<?php echo get_template_directory_uri(); ?>/images/sn/facebook.png">
+						<img class="teammemwidget" src="<?php echo get_template_directory_uri(); ?>/images/sn/twitter.png">
+						<img class="teammemwidget" src="<?php echo get_template_directory_uri(); ?>/images/sn/linkedin.png">
+						<img class="teammemwidget" src="<?php echo get_template_directory_uri(); ?>/images/sn/googleplus.png">
+					</div>
 
-				<div class="teammem">
-					<img class="anim" src="<?php echo get_template_directory_uri(); ?>/images/teammem/teammem2.jpg">
-					<h5>Jane Smith</h5>
-					<p class="teammemjob">Co-Founder</p>
-					<hr class="teammemhr">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-					<img class="teammemwidget" src="<?php echo get_template_directory_uri(); ?>/images/sn/facebook.png">
-					<img class="teammemwidget" src="<?php echo get_template_directory_uri(); ?>/images/sn/twitter.png">
-					<img class="teammemwidget" src="<?php echo get_template_directory_uri(); ?>/images/sn/linkedin.png">
-					<img class="teammemwidget" src="<?php echo get_template_directory_uri(); ?>/images/sn/googleplus.png">
-				</div>
-
-				<div class="teammem">
-					<img class="anim" src="<?php echo get_template_directory_uri(); ?>/images/teammem/teammem3.jpg">
-					<h5>John Doe</h5>
-					<p class="teammemjob">Sales Manager</p>
-					<hr class="teammemhr">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-					<img class="teammemwidget" src="<?php echo get_template_directory_uri(); ?>/images/sn/facebook.png">
-					<img class="teammemwidget" src="<?php echo get_template_directory_uri(); ?>/images/sn/twitter.png">
-					<img class="teammemwidget" src="<?php echo get_template_directory_uri(); ?>/images/sn/linkedin.png">
-					<img class="teammemwidget" src="<?php echo get_template_directory_uri(); ?>/images/sn/googleplus.png">
+					<div class="teammem col-lg-4 col-md-4 col-sm-4 col-xs-10">
+						<img class="anim" src="<?php echo get_template_directory_uri(); ?>/images/teammem/teammem3.jpg">
+						<h5>John Doe</h5>
+						<p class="teammemjob">Sales Manager</p>
+						<hr class="teammemhr">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+						<img class="teammemwidget" src="<?php echo get_template_directory_uri(); ?>/images/sn/facebook.png">
+						<img class="teammemwidget" src="<?php echo get_template_directory_uri(); ?>/images/sn/twitter.png">
+						<img class="teammemwidget" src="<?php echo get_template_directory_uri(); ?>/images/sn/linkedin.png">
+						<img class="teammemwidget" src="<?php echo get_template_directory_uri(); ?>/images/sn/googleplus.png">
+					</div>
+					
 				</div>
 
 			</div>
@@ -241,7 +259,8 @@
 				<h2>Contact Us</h2>
 				
 				<div id="contact-map-cont">
-					<iframe id="contact-map" src="https://maps.google.com/maps?hl=en&q=Random Hills Road&ie=UTF8&t=roadmap&z=13&iwloc=B&output=embed"></iframe>
+					<h3><a id="contact-map-link">Show Google Map</a></h3>
+					<iframe id="contact-map" data-src="https://maps.google.com/maps?hl=en&q=Random Hills Road&ie=UTF8&t=roadmap&z=13&iwloc=B&output=embed"></iframe>
 				</div>
 				
 				<div id="contact-details">
@@ -272,28 +291,22 @@
 		</div>
 	</div>
 
-	<?php
-		get_footer(); // Gets footer.php
-		wp_footer(); // Gets the Wordpress Header
-	?>
+	<!-- Gets the footer and adds it to the page -->
+	<?php get_footer(); ?>
 
 </div>
 
 <style type="text/css">
 
-	/* TESTIMONIALS + OUR TEAM (combined because of similarity) */
-	.testim { display: inline-block; text-align: left; }
+	/* TESTIMONIALS */
+	.testim { display: inline-block; text-align: left; margin-top: 25px; }
 	.testim-left img { height: 100%; width: 100%; border-radius: 50%; }
 	.testim-right p { font-size: 18px; }
 	.testim-right img { width: 50%; }
 	.testim > p:nth-child(2) { padding: 20px 0px 0px 0px; }
 
 	/* STATS */
-	#stats  {
-		min-height: 50px;
-		background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('<?php echo get_template_directory_uri(); ?>/images/stats-background.jpg') no-repeat fixed 75% center;
-	 	background-size: 125%;
-	}
+	#stats { min-height: 50px; background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('<?php echo get_template_directory_uri(); ?>/images/stats-background.jpg') no-repeat fixed 75% center; }
 	.stat { margin: 30px 50px; color: #FFF; display: inline-block; }
 	.statf { font-size: 40px; font-weight: bold; }
 	.statl { font-size: 20px; font-weight: normal; }
@@ -313,14 +326,17 @@
 	/* OUR TEAM*/
 	#ourteam { background-color: #0D0D0D; color: #FFF; }
 	#ourteam h2, #ourteam h3 { color: #FFF; }
+	#ourteam .col-lg-4, #ourteam .col-md-4, #ourteam .col-sm-4 { width: 30%; }
+	.teammem { display: inline-block; float: none; }
 	.teammem h5 { color: #FFF; }
+	.teammem img:first-child { width: 150px; height: 150px; margin: 25px 0px; border-radius: 50%; border: 10px solid #FF4848; box-shadow: 0px 0px 10px 1px #666; }
 	.teammemjob { color: #37CB09; font-weight: bold; }
 	.teammemhr { width: 50%; }
 	.teammemwidget { width: 30px; margin: 3px; }
 
 	/* CONTACT US */
 	#contact-map-cont { height: 500px; }
-	#contact-map { width: 100%; height: 100%; border: none; }
+	#contact-map { width: 100%; height: 100%; border: none; display: none; }
 	#contact-details { margin-top: 50px; }
 	.contact-detail { display: inline-block; width: 300px; vertical-align: top; }
 	.contact-detail-hr { border: 1px solid #B3B3B3; margin: 20px auto; width: 75%; }
@@ -338,7 +354,7 @@
 	/* OTHER */
  	.inline { display: inline; }
 	.inlineb { display: inline-block; }
-	.anim, .hidden { display: none; }
+	.anim { display: none; }
 	.rm { padding: 3% 2%; }
 
 	/* For jQuery Effects, stop them moving to the left */
@@ -365,9 +381,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-ui-1.9.2.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/homepage.js"></script>
 <script>
-	var animate_var
-	var theme_folder = '<?php echo get_template_directory_uri(); ?>'
-	var landerbuttonsloc = ["<?php echo get_theme_mod('lander-button1-location-setting'); ?>", "<?php echo get_theme_mod('lander-button2-location-setting'); ?>"];
+	var landerbuttonsloc = ["<?php echo get_option('lander-button1-location-setting'); ?>", "<?php echo get_option('lander-button2-location-setting'); ?>"];
 </script>
 
 

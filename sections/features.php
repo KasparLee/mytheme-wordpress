@@ -12,8 +12,8 @@
 	.featurebreak { height: 50px; }
 	</style>
 	
-	<h2><?php echo get_theme_mod('features_title_setting'); ?></h2>
-	<h3><?php echo get_theme_mod('features_subtitle_setting'); ?></h3>
+	<h2><?php echo get_option('features_title_setting'); ?></h2>
+	<h3><?php echo get_option('features_subtitle_setting'); ?></h3>
 	
 	<br>
 

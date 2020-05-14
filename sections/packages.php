@@ -3,6 +3,7 @@
 	<style type="text/css">
 	/* PACKAGES */
 	#packages { background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('<?php echo get_template_directory_uri(); ?>/images/packages-background.jpg') no-repeat fixed 50% center; background-size: cover; min-height: 538px; }
+	#packages > h2, #packages > h3 { color: #FFF; }
 	.package-cont { float: none; margin: 1.5%; min-width: 250px; }
 	.package { background-color: #FFF; overflow: hidden; }
 	.package .packagehead h4 { display: inline-block; margin: 20px; }
@@ -16,10 +17,10 @@
 	.packagebreak { height: 50px; }
 	</style>
 	
-	<h2><?php echo get_theme_mod('packages_title_setting'); ?></h2>
-	<h3><?php echo get_theme_mod('packages_subtitle_setting'); ?></h3>
+	<h2><?php echo get_option('packages_title_setting'); ?></h2>
+	<h3><?php echo get_option('packages_subtitle_setting'); ?></h3>
 
-	<?php echo add_new_lines_p(get_theme_mod('packages_desc_setting')); ?>
+	<?php echo add_new_lines_p(get_option('packages_desc_setting')); ?>
 
 	<?php dynamic_sidebar('packages_sidebar') ?>
 

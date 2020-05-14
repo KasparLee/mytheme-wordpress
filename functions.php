@@ -8,8 +8,8 @@
 	add_theme_support('post-thumbnails');
 
 	// Pages & Post Support
-	add_post_type_support('post', 'excerpt');
-	add_post_type_support('page', 'excerpt');
+	add_post_type_support( 'post', 'excerpt' );
+	add_post_type_support( 'page', 'excerpt' );
 
 
 
@@ -17,48 +17,18 @@
 // ENQUEUE SCRIPTS //
 // *************** //
 
-	function mytheme_enqueue_page_scripts() {
-		// jQuery
-		wp_enqueue_script('jquery');
-	}
+	// jQuery
+	wp_enqueue_script('jquery');
 
-	function mytheme_enqueue_admin_scripts() {
-		// Wordpress Color Picker
-		wp_enqueue_script('wp-color-picker');
-		wp_enqueue_style('wp-color-picker');
+	// Wordpress Color Picker
+	wp_enqueue_script('wp-color-picker');
+	wp_enqueue_style('wp-color-picker');
 
-		// Script for media uploads in Widget Forms
-		wp_enqueue_script('widget_forms', get_template_directory_uri() . '/js/widget_forms.js', array('jquery'));
-		// To allow Media Uploads in Widget Forms
-		wp_enqueue_media();
-	}
+	// Script for media uploads in Widget Forms
+	wp_enqueue_script( 'widget_forms', get_template_directory_uri() . '/js/widget_forms.js', array('jquery'));
+	// To allow Media Uploads in Widget Forms
+	wp_enqueue_media();
 
-	function mytheme_enqueue_customizer_scripts() {
-		// Live Preview Script
-		wp_enqueue_script('customizer', get_template_directory_uri() . '/js/customizer.js', array('jquery', 'customize-preview'));
-		
-		// For AJAX loading of sections
-		wp_localize_script('customizer', 'ajax', array(
-			'url' => admin_url('admin-ajax.php')
-		));
-	}
-
-	add_action('wp_enqueue_scripts', 'mytheme_enqueue_page_scripts');
-	add_action('admin_enqueue_scripts', 'mytheme_enqueue_admin_scripts');
-	add_action('customize_preview_init', 'mytheme_enqueue_customizer_scripts');
-
-
-
-// ************** //
-// AJAX Functions //
-// ************** //
-
-	function mytheme_load_section() {
-		get_template_part($_POST['section'], 'lander_section_template');
-		die();
-	}
-
-	add_action('wp_ajax_mytheme_load_section', 'mytheme_load_section');
 
 
 // ************** //
@@ -482,7 +452,7 @@
 		// Initiate All Sidebars and Widgets //
 		///////////////////////////////////////
 
-			add_action('widgets_init', 'mytheme_register_sidebars');
-			add_action('widgets_init', 'mytheme_register_widgets');
+			add_action( 'widgets_init', 'mytheme_register_sidebars' );
+			add_action( 'widgets_init', 'mytheme_register_widgets' );
 
 ?>

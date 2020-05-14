@@ -14,9 +14,9 @@
 		?>
 	</div>
 	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-		<p>Copyright &copy; <?php echo date("Y "); bloginfo('title'); ?></p><p>All Rights Reserved.</p>
+		<p>Copyright © <?php echo date("Y "); bloginfo('title'); ?></p><p>All Rights Reserved.</p>
 	</div>
 	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-		<p>Copyright &copy; <?php echo date("Y "); bloginfo('title'); ?></p><p>All Rights Reserved.</p>
+		<p>Copyright © <?php echo date("Y "); bloginfo('title'); ?></p><p>All Rights Reserved.</p>
 	</div>
 </div>

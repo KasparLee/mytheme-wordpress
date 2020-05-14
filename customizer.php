@@ -8,17 +8,17 @@ function mytheme_customizer($wp_customize) {
 
 		// Homepage IDs of each section
 		$section_locations = array(
-			'#lander' => 'Lander',
-			'#features' => 'Features',
-			'#ourcompany' => 'Our Company',
-			'#aboutus' => 'About Us',
-			'#packages' => 'Packages',
-			'#testimonials' => 'Testimonials',
-			'#stats' => 'Stats',
-			'#portfolio' => 'Portfolio',
-			'#ourclients' => 'Our Clients',
-			'#ourteam' => 'Meet Our Team',
-			'#contact' => 'Contact Us',
+			'#lander' => __('Lander'),
+			'#features' => __('Features'),
+			'#ourcompany' => __('Our Company'),
+			'#aboutus' => __('About Us'),
+			'#packages' => __('Packages'),
+			'#testimonials' => __('Testimonials'),
+			'#stats' => __('Stats'),
+			'#portfolio' => __('Portfolio'),
+			'#ourclients' => __('Our Clients'),
+			'#ourteam' => __('Meet Our Team'),
+			'#contact' => __('Contact Us'),
 		);
 		
 		// URL to theme folder
@@ -40,16 +40,15 @@ function mytheme_customizer($wp_customize) {
 					)
 				);
 
-				// Homepage Title
-					$wp_customize->add_setting('homepage_title_setting', array('default' => 'My Website', 'transport' => 'postMessage'));
+				// Page Title
+					$wp_customize->add_setting('homepage_title_setting', array( 'default' => 'MyTheme', 'type' => 'option'));
 					$wp_customize->add_control('homepage_title_control', array(
-							'label' => 'Homepage Title (shown in tab)',
-							'section'    => 'homepage_general_section',
-							'settings'   => 'homepage_title_setting',
+							'label' => 'Homepage Title',
+							'section' => 'homepage_general_section',
+							'settings' => 'homepage_title_setting',
 							'type' => 'text',
 						)
 					);
-
 
 
 
@@ -61,7 +60,7 @@ function mytheme_customizer($wp_customize) {
 				);
 
 				// Lander Shown
-					$wp_customize->add_setting('lander_shown_setting', array('default' => true, 'transport' => 'postMessage'));
+					$wp_customize->add_setting('lander_shown_setting', array( 'default' => true, 'type' => 'option' ) );
 					$wp_customize->add_control('lander_shown_control', array(
 							'label' => 'Is Lander Section Shown?',
 							'section'    => 'lander_section',
@@ -71,9 +70,9 @@ function mytheme_customizer($wp_customize) {
 					);
 
 				// Lander Background Image
-					$wp_customize->add_setting('lander_background_setting', array('default' => $themeurl . '/images/lander-background.jpg', 'transport' => 'postMessage'));
+					$wp_customize->add_setting('lander_background_setting', array( 'default' => $themeurl . '/images/lander-background.jpg', 'type' => 'option' ) );
 					$wp_customize->add_control(
-						new WP_Customize_Image_Control($wp_customize, 'lander_background_control', array(
+						new WP_Customize_Image_Control( $wp_customize, 'lander_background_control', array(
 							'label' => 'Lander Background Image',
 							'section' => 'lander_section',
 							'settings' => 'lander_background_setting',
@@ -81,7 +80,7 @@ function mytheme_customizer($wp_customize) {
 					);
 
 				// Lander Title
-					$wp_customize->add_setting('lander_title_setting', array('default' => 'My Theme', 'transport' => 'postMessage'));
+					$wp_customize->add_setting('lander_title_setting', array( 'default' => 'MyTheme', 'type' => 'option' ) );
 					$wp_customize->add_control('lander_title_control', array(
 							'label' => 'Title',
 							'section' => 'lander_section',
@@ -91,7 +90,7 @@ function mytheme_customizer($wp_customize) {
 					);
 
 				// Lander Subtitle
-					$wp_customize->add_setting('lander_subtitle_setting', array('default' => 'A professional landing page theme for businesses', 'transport' => 'postMessage'));
+					$wp_customize->add_setting('lander_subtitle_setting', array( 'default' => 'A professional landing page theme for businesses', 'type' => 'option' ) );
 					$wp_customize->add_control('lander_subtitle_control', array(
 							'label' => 'Subtitle',
 							'section' => 'lander_section',
@@ -101,7 +100,7 @@ function mytheme_customizer($wp_customize) {
 					);
 
 				// Button 1 Shown
-					$wp_customize->add_setting('lander_button1_shown_setting', array('default' => '1', 'transport' => 'postMessage'));
+					$wp_customize->add_setting('lander_button1_shown_setting', array( 'default' => '1', 'type' => 'option' ) );
 					$wp_customize->add_control('lander_button1_shown_control', array(
 							'label' => 'Is Button 1 Shown?',
 							'section' => 'lander_section',
@@ -111,7 +110,7 @@ function mytheme_customizer($wp_customize) {
 					);
 
 				// Button 1 Text
-					$wp_customize->add_setting('lander_button1_text_setting', array('default' => 'Features', 'transport' => 'postMessage'));
+					$wp_customize->add_setting('lander_button1_text_setting', array( 'default' => 'Features', 'type' => 'option' ) );
 					$wp_customize->add_control('lander_button1_text_control', array(
 							'label' => 'Text for Button 1',
 							'section' => 'lander_section',
@@ -121,7 +120,7 @@ function mytheme_customizer($wp_customize) {
 					);
 
 				// Button 1 Location
-					$wp_customize->add_setting('lander_button1_location_setting', array('default' => '#features', 'transport' => 'postMessage'));
+					$wp_customize->add_setting('lander_button1_location_setting', array( 'default' => '#features', 'type' => 'option' ));
 					$wp_customize->add_control('lander_button1_location_control', array(
 							'label' => 'Link Location for Button 1',
 							'section' => 'lander_section',
@@ -132,7 +131,7 @@ function mytheme_customizer($wp_customize) {
 					);
 
 				// Button 2 Shown
-					$wp_customize->add_setting('lander_button2_shown_setting', array('default' => '1', 'transport' => 'postMessage'));
+					$wp_customize->add_setting('lander_button2_shown_setting', array( 'default' => '1', 'type' => 'option' ) );
 					$wp_customize->add_control('lander_button2_shown_control', array(
 							'label' => 'Is Button 2 Shown?',
 							'section' => 'lander_section',
@@ -142,7 +141,7 @@ function mytheme_customizer($wp_customize) {
 					);
 
 				// Button 2 Text
-					$wp_customize->add_setting('lander_button2_text_setting', array('default' => 'Products', 'transport' => 'postMessage'));
+					$wp_customize->add_setting('lander_button2_text_setting', array( 'default' => 'Products', 'type' => 'option' ) );
 					$wp_customize->add_control('lander_button2_text_control', array(
 							'label' => 'Text for Button 2',
 							'section' => 'lander_section',
@@ -152,7 +151,7 @@ function mytheme_customizer($wp_customize) {
 					);
 
 				// Button 2 Location
-					$wp_customize->add_setting('lander_button2_location_setting', array('default' => '#packages', 'transport' => 'postMessage'));
+					$wp_customize->add_setting('lander_button2_location_setting', array( 'default' => '#packages', 'type' => 'option' ));
 					$wp_customize->add_control('lander_button2_location_control', array(
 							'label' => 'Link Location for Button 2',
 							'section' => 'lander_section',
@@ -163,7 +162,7 @@ function mytheme_customizer($wp_customize) {
 					);
 
 				// Show Subscribe Section
-					$wp_customize->add_setting('lander_subscribe_shown_setting', array('default' => '1', 'transport' => 'postMessage'));
+					$wp_customize->add_setting('lander_subscribe_shown_setting', array( 'default' => '1', 'type' => 'option' ));
 					$wp_customize->add_control('lander_subscribe_shown_control', array(
 							'label' => 'Is Subscribe Section Shown?',
 							'section' => 'lander_section',
@@ -182,7 +181,7 @@ function mytheme_customizer($wp_customize) {
 				);
 
 				// Features Shown
-					$wp_customize->add_setting('features_shown_setting', array('default' => true));
+					$wp_customize->add_setting('features_shown_setting', array( 'default' => true, 'type' => 'option') );
 					$wp_customize->add_control('features_shown_control', array(
 							'label' => 'Is Features Section Shown?',
 							'section'    => 'features_section',
@@ -192,7 +191,7 @@ function mytheme_customizer($wp_customize) {
 					);
 
 				// Features Title
-					$wp_customize->add_setting('features_title_setting', array('default' => 'Features'));
+					$wp_customize->add_setting('features_title_setting', array( 'default' => 'Features', 'type' => 'option') );
 					$wp_customize->add_control('features_title_control', array(
 							'label' => 'Title',
 							'section' => 'features_section',
@@ -202,7 +201,7 @@ function mytheme_customizer($wp_customize) {
 					);
 
 				// Features Subtitle
-					$wp_customize->add_setting('features_subtitle_setting', array('default' => 'Why choose this sleek, lightweight theme.'));
+					$wp_customize->add_setting('features_subtitle_setting', array( 'default' => 'Why choose this sleek, lightweight theme.', 'type' => 'option') );
 					$wp_customize->add_control('features_subtitle_control', array(
 							'label' => 'Subtitle',
 							'section' => 'features_section',
@@ -221,7 +220,7 @@ function mytheme_customizer($wp_customize) {
 				);
 
 				// Our Company Shown
-					$wp_customize->add_setting('ourcompany_shown_setting', array('default' => true));
+					$wp_customize->add_setting('ourcompany_shown_setting', array( 'default' => true, 'type' => 'option') );
 					$wp_customize->add_control('ourcompany_shown_control', array(
 							'label' => 'Is Our Company Section Shown?',
 							'section'    => 'ourcompany_section',
@@ -231,7 +230,7 @@ function mytheme_customizer($wp_customize) {
 					);
 
 				// Our Company Title
-					$wp_customize->add_setting('ourcompany_title_setting', array('default' => 'A Small Heading'));
+					$wp_customize->add_setting('ourcompany_title_setting', array( 'default' => 'A Small Heading', 'type' => 'option') );
 					$wp_customize->add_control('ourcompany_title_control', array(
 							'label' => 'Title',
 							'section' => 'ourcompany_section',
@@ -241,7 +240,7 @@ function mytheme_customizer($wp_customize) {
 					);
 
 				// Our Company Text
-					$wp_customize->add_setting('ourcompany_text_setting', array('default' => 'Add a description about your products here...'));
+					$wp_customize->add_setting('ourcompany_text_setting', array( 'default' => 'Add a description about your products here...', 'type' => 'option') );
 					$wp_customize->add_control('ourcompany_text_control', array(
 							'label' => 'Text',
 							'section' => 'ourcompany_section',
@@ -251,9 +250,9 @@ function mytheme_customizer($wp_customize) {
 					);
 
 				// Our Company Image
-					$wp_customize->add_setting('ourcompany_image_setting', array('default' => $themeurl . '/images/ourcompany-pic1.jpg'));
+					$wp_customize->add_setting('ourcompany_image_setting', array( 'default' => $themeurl . '/images/ourcompany-pic1.jpg', 'type' => 'option') );
 					$wp_customize->add_control(
-						new WP_Customize_Upload_Control($wp_customize, 'ourcompany_image_control', array(
+						new WP_Customize_Upload_Control( $wp_customize, 'ourcompany_image_control', array(
 							'label' => 'Our Company Image',
 							'section' => 'ourcompany_section',
 							'settings' => 'ourcompany_image_setting',
@@ -261,7 +260,7 @@ function mytheme_customizer($wp_customize) {
 					);
 
 				// Our Company Image ALT Tag
-					$wp_customize->add_setting('ourcompany_image_alt_setting', array('default' => ''));
+					$wp_customize->add_setting('ourcompany_image_alt_setting', array( 'default' => '', 'type' => 'option') );
 					$wp_customize->add_control('ourcompany_image_alt_control', array(
 							'label' => 'Image ALT Tag',
 							'section' => 'ourcompany_section',
@@ -280,7 +279,7 @@ function mytheme_customizer($wp_customize) {
 				);
 
 				// About Us Shown
-					$wp_customize->add_setting('aboutus_shown_setting', array('default' => true));
+					$wp_customize->add_setting('aboutus_shown_setting', array( 'default' => true, 'type' => 'option') );
 					$wp_customize->add_control('aboutus_shown_control', array(
 							'label' => 'Is About Us Section Shown?',
 							'section'    => 'aboutus_section',
@@ -290,7 +289,7 @@ function mytheme_customizer($wp_customize) {
 					);
 
 				// About Us Title
-					$wp_customize->add_setting('aboutus_title_setting', array('default' => 'About Us'));
+					$wp_customize->add_setting('aboutus_title_setting', array( 'default' => 'About Us', 'type' => 'option') );
 					$wp_customize->add_control('aboutus_title_control', array(
 							'label' => 'Title',
 							'section' => 'aboutus_section',
@@ -300,7 +299,7 @@ function mytheme_customizer($wp_customize) {
 					);
 
 				// About Us Subtitle
-					$wp_customize->add_setting('aboutus_subtitle_setting', array('default' => 'Tell everyone about your company (and your skills)'));
+					$wp_customize->add_setting('aboutus_subtitle_setting', array( 'default' => 'Tell everyone about your company (and your skills)', 'type' => 'option') );
 					$wp_customize->add_control('aboutus_subtitle_control', array(
 							'label' => 'Subtitle',
 							'section' => 'aboutus_section',
@@ -310,7 +309,7 @@ function mytheme_customizer($wp_customize) {
 					);
 
 				// About Us Text
-					$wp_customize->add_setting('aboutus_text_setting', array('default' => 'Add a description about your company here...'));
+					$wp_customize->add_setting('aboutus_text_setting', array( 'default' => 'Add a description about your company here...', 'type' => 'option') );
 					$wp_customize->add_control('aboutus_text_control', array(
 							'label' => 'Text',
 							'section' => 'aboutus_section',
@@ -320,7 +319,7 @@ function mytheme_customizer($wp_customize) {
 					);
 
 				// About Us Skills Title
-					$wp_customize->add_setting('aboutus_stitle_setting', array('default' => 'Our Skills'));
+					$wp_customize->add_setting('aboutus_stitle_setting', array( 'default' => 'Our Skills', 'type' => 'option') );
 					$wp_customize->add_control('aboutus_stitle_control', array(
 							'label' => 'Skills Title',
 							'section' => 'aboutus_section',
@@ -339,7 +338,7 @@ function mytheme_customizer($wp_customize) {
 				);
 
 				// Packages Shown
-					$wp_customize->add_setting('packages_shown_setting', array('default' => true));
+					$wp_customize->add_setting('packages_shown_setting', array( 'default' => true, 'type' => 'option') );
 					$wp_customize->add_control('packages_shown_control', array(
 							'label' => 'Is Packages Section Shown?',
 							'section'    => 'packages_section',
@@ -349,7 +348,7 @@ function mytheme_customizer($wp_customize) {
 					);
 
 				// Packages Title
-					$wp_customize->add_setting('packages_title_setting', array('default' => 'Packages'));
+					$wp_customize->add_setting('packages_title_setting', array( 'default' => 'Packages', 'type' => 'option') );
 					$wp_customize->add_control('packages_title_control', array(
 							'label' => 'Title',
 							'section' => 'packages_section',
@@ -359,7 +358,7 @@ function mytheme_customizer($wp_customize) {
 					);
 
 				// Packages Subtitle
-					$wp_customize->add_setting('packages_subtitle_setting', array('default' => ''));
+					$wp_customize->add_setting('packages_subtitle_setting', array( 'default' => '', 'type' => 'option') );
 					$wp_customize->add_control('packages_subtitle_control', array(
 							'label' => 'Subtitle',
 							'section' => 'packages_section',
@@ -369,7 +368,7 @@ function mytheme_customizer($wp_customize) {
 					);
 
 				// Packages Description
-					$wp_customize->add_setting('packages_desc_setting', array('default' => ''));
+					$wp_customize->add_setting('packages_desc_setting', array( 'default' => '', 'type' => 'option') );
 					$wp_customize->add_control('packages_desc_control', array(
 							'label' => 'Description',
 							'section' => 'packages_section',

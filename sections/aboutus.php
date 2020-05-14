@@ -14,17 +14,17 @@
 	.postpb p:last-child { float: right; }
 	</style>
 
-	<h2><?php echo get_theme_mod('aboutus_title_setting'); ?></h2>
-	<h3><?php echo get_theme_mod('aboutus_subtitle_setting'); ?></h3>
+	<h2><?php echo get_option('aboutus_title_setting'); ?></h2>
+	<h3><?php echo get_option('aboutus_subtitle_setting'); ?></h3>
 
 	<div class="aboutuscol col-lg-5 col-md-5 col-sm-5 col-xs-12" style="float: left;">
-		<p><?php echo add_new_lines_p(get_theme_mod('aboutus_text_setting')); ?></p>
+		<p><?php echo add_new_lines_p(get_option('aboutus_text_setting')); ?></p>
 	</div>
 
 	<div class="col-lg-2 col-md-2 col-sm-2 hidden-xs"></div>
 
 	<div class="aboutuscol col-lg-5 col-md-5 col-sm-5 col-xs-12" style="float: right;">
-		<h4 style="text-align: center"><?php echo get_theme_mod('aboutus_stitle_setting'); ?></h4>
+		<h4 style="text-align: center"><?php echo get_option('aboutus_stitle_setting'); ?></h4>
 		<?php dynamic_sidebar('aboutus_sidebar'); ?>
 	</div>
 
