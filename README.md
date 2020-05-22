@@ -20,6 +20,7 @@ A live demo of the theme can be found [**here**](https://kasparlee.com/portfolio
 ## Credits
 
 - [jQuery](https://jquery.com/)
+- [jQuery UI](https://jqueryui.com/)
 - [Bootstrap](https://getbootstrap.com/)
 
 
